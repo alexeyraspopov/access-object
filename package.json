@@ -38,7 +38,7 @@
   "author": "Alexey Raspopov",
   "license": "MIT",
   "engines": {
-    "node": ">=6"
+    "node": ">=6.2.1"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
