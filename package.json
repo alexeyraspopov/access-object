@@ -1,0 +1,56 @@
+{
+  "name": "access-object",
+  "version": "0.1.0",
+  "description": "Data Access Object",
+  "main": "src/AccessObject.js",
+  "dependencies": {
+    "invariant": "~2.2.1",
+    "warning": "~3.0.0"
+  },
+  "devDependencies": {
+    "browserify": "~13.0.1",
+    "co": "~4.6.0",
+    "eslint": "~2.11.1",
+    "fetch-mock": "~4.5.4",
+    "isparta-loader": "~2.0.0",
+    "karma": "~0.13.22",
+    "karma-chrome-launcher": "~1.0.1",
+    "karma-coverage": "~1.0.0",
+    "karma-mocha": "~1.0.1",
+    "karma-mocha-reporter": "~2.0.4",
+    "karma-webpack": "~1.7.0",
+    "mocha": "~2.5.3",
+    "webpack": "~1.13.1",
+    "whatwg-fetch": "~1.0.0"
+  },
+  "scripts": {
+    "test": "karma start && eslint {src,test}/**.js *.js",
+    "prepublish": "browserify . -s AccessObject > access-object.js"
+  },
+  "repository": "alexeyraspopov/access-object",
+  "keywords": [
+    "api",
+    "dao",
+    "rest",
+    "http",
+    "resource"
+  ],
+  "author": "Alexey Raspopov",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.2.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "rules": {
+      "no-case-declarations": 0
+    }
+  }
+}
