@@ -12,7 +12,7 @@ module.exports = config => {
     },
 
     frameworks: ['mocha'],
-    browsers: ['Chrome'],
+    browsers: ['HeadlessChrome'],
     reporters: ['mocha', 'coverage'],
 
     singleRun: true,
@@ -28,6 +28,10 @@ module.exports = config => {
       noInfo: true
     },
 
-    coverageReporter: { type: 'html', dir: 'coverage' }
+    coverageReporter: { type: 'html', dir: 'coverage' },
+
+    customLaunchers: {
+      HeadlessChrome: { base: 'Chrome', flags: ['--no-sandbox'] }
+    }
   });
 };
