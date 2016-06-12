@@ -13,8 +13,8 @@ const ALLOWED_METHODS = ['GET', 'POST', 'PATCH', 'DELETE',
 /** Data Access Object representation */
 class AccessObject {
   /**
-   * @param endpoint {string}
-   * @param options {object}
+   * @param {string} endpoint
+   * @param {object} options
    */
   constructor(endpoint, options = {}) {
     invariant(typeof endpoint === 'string' && endpoint.length > 0,
@@ -30,9 +30,9 @@ class AccessObject {
    * Make an HTTP request to provided endpoint. Utility method that is used
    * by higher level API methods.
    * @protected
-   * @param method {string}
-   * @param body {object}
-   * @param options {object}
+   * @param {string} method
+   * @param {object} body
+   * @param {object} options
    * @return Promise<Response>
    */
   request(endpoint, method, body = null, options) {
@@ -49,8 +49,8 @@ class AccessObject {
 
   /**
    * Make a POST request to create new entity with provided data.
-   * @param data {object}
-   * @param options {object}
+   * @param {object} data
+   * @param {object} options
    * @return Promise<Resource|Location>
    */
   create(data, options = {}) {
@@ -94,9 +94,9 @@ class AccessObject {
 
   /**
    * Make a GET request to retrieve single or list of entities.
-   * @param key {string|null}
-   * @param query {object}
-   * @param options {object}
+   * @param {string|null} key
+   * @param {object} query
+   * @param {object} options
    * @return Promise
    */
   retrieve(key = null, query = {}, options = {}) {
@@ -125,9 +125,9 @@ class AccessObject {
   /**
    * Make a PATCH request to update single entity.
    * http://restful-api-design.readthedocs.io/en/latest/methods.html#patch-vs-put
-   * @param key {string}
-   * @param data {object}
-   * @param options {object}
+   * @param {string} key
+   * @param {object} data
+   * @param {object} options
    * @return Promise
    */
   update(key, data, options = {}) {
@@ -166,8 +166,8 @@ class AccessObject {
 
   /**
    * Make a DELETE request to destroy single entity.
-   * @param key {object}
-   * @param options {object}
+   * @param {object} key
+   * @param {object} options
    * @return Promise
    */
   destroy(key, options = {}) {

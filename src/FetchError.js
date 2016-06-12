@@ -1,8 +1,8 @@
 /** Custom error type that contains failed response data */
 class FetchError extends Error {
   /**
-   * @param message {string}
-   * @param response {Response}
+   * @param {string} message
+   * @param {Response} response
    */
   constructor(message, response) {
     super(message);
