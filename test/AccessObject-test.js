@@ -64,6 +64,39 @@ describe('AccessObject', () => {
     assert.deepEqual(response, body);
   }));
 
+  it('should retrieve with query', co.wrap(function*() {
+    const body = [{ id: '48fga412bca', firstName: 'Jon', lastName: 'Snow' }];
+
+    ff.mock(/\/resources\/\?.+/, 'GET', { status: 200, body });
+
+    const response = yield Resources.retrieve(null, { age: 23, name: 'Jon' });
+    const [path, request] = ff.calls().matched[0];
+
+    const expected = { method: 'GET', body: null, headers: {},
+                       credentials: null };
+
+    assert.equal(path, '/resources/?age=23&name=Jon');
+    assert.deepEqual(request, expected);
+    assert.deepEqual(response, body);
+  }));
+
+  it('should retrieve one item with query', co.wrap(function*() {
+    const body = { id: '48fga412bca', firstName: 'Jon', lastName: 'Snow' };
+
+    ff.mock(/\/resources\/48fga412bca\?.+/, 'GET', { status: 200, body });
+
+    const response = yield Resources.retrieve('48fga412bca', { age: 23,
+                                                               name: 'Jon' });
+    const [path, request] = ff.calls().matched[0];
+
+    const expected = { method: 'GET', body: null, headers: {},
+                       credentials: null };
+
+    assert.equal(path, '/resources/48fga412bca?age=23&name=Jon');
+    assert.deepEqual(request, expected);
+    assert.deepEqual(response, body);
+  }));
+
   it('should update instance', co.wrap(function*() {
     const body = { age: 23 };
 

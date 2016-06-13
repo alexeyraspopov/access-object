@@ -101,7 +101,13 @@ class AccessObject {
    */
   retrieve(key = null, query = {}, options = {}) {
     const shouldRetrieveList = key === null;
-    const endpoint = url.resolve(this.endpoint, key || '');
+
+    const resolved = url.resolve(this.endpoint, key || '');
+
+    const parsed = url.parse(resolved);
+    parsed.query = query;
+
+    const endpoint = url.format(parsed);
 
     return this.request(endpoint, 'GET', null, options).then(response => {
       if (!response.ok) {
