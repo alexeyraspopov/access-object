@@ -1,0 +1,5 @@
+*
+!src/**
+!access-object.js
+!package.json
+!README.md
