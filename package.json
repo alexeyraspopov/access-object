@@ -1,6 +1,6 @@
 {
   "name": "access-object",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Data Access Object",
   "main": "access-object.js",
   "dependencies": {
