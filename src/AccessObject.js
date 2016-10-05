@@ -70,7 +70,7 @@ class AccessObject {
 
           warning(!Array.isArray(data),
                   'AccessObject: expected to receive created entity only. ' +
-                  'Instead got an array %s' + data);
+                  'Instead got an array %s', data);
 
           return data;
         });
