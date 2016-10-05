@@ -2,7 +2,6 @@
 const url = require('url');
 const invariant = require('invariant');
 const warning = require('warning');
-const FetchError = require('./FetchError');
 
 const DEFAULT_OPTIONS = { key: 'id', cache: false, credentials: null,
                           headers: {} };
@@ -58,7 +57,7 @@ class AccessObject {
 
     return this.request(endpoint, 'POST', data, options).then(response => {
       if (!response.ok) {
-        throw new FetchError('create request was not successful', response);
+        throw response;
       }
 
       switch (response.status) {
@@ -111,7 +110,7 @@ class AccessObject {
 
     return this.request(endpoint, 'GET', null, options).then(response => {
       if (!response.ok) {
-        throw new FetchError('retrieve request was not successful', response);
+        throw response;
       }
 
       warning(response.status === 200,
@@ -145,7 +144,7 @@ class AccessObject {
 
     return this.request(endpoint, 'PATCH', data, options).then(response => {
       if (!response.ok) {
-        throw new FetchError('update request was not successful', response);
+        throw response;
       }
 
       switch (response.status) {
@@ -185,7 +184,7 @@ class AccessObject {
 
     return this.request(endpoint, 'DELETE', null, options).then(response => {
       if (!response.ok) {
-        throw new FetchError('delete request was not successful', response);
+        throw response;
       }
 
       switch (response.status) {
