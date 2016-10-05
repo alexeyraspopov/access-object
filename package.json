@@ -1,6 +1,6 @@
 {
   "name": "access-object",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Data Access Object",
   "main": "access-object.js",
   "dependencies": {
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "karma start && eslint {src,test}/**.js *.js",
-    "prepublish": "browserify . -s AccessObject > access-object.js"
+    "prepublish": "browserify src/AccessObject.js -s AccessObject > access-object.js"
   },
   "repository": "alexeyraspopov/access-object",
   "keywords": [
