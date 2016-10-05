@@ -2,7 +2,7 @@
   "name": "access-object",
   "version": "0.1.0",
   "description": "Data Access Object",
-  "main": "src/AccessObject.js",
+  "main": "access-object.js",
   "dependencies": {
     "invariant": "~2.2.1",
     "warning": "~3.0.0"
