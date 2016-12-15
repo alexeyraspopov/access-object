@@ -1,7 +1,7 @@
-const co = require('co');
-const ff = require('fetch-mock');
-const assert = require('assert');
-const AccessObject = require('../src/AccessObject');
+import co from 'co';
+import ff from 'fetch-mock';
+import assert from 'assert';
+import AccessObject from '../AccessObject';
 
 describe('AccessObject', () => {
   let Resources;
