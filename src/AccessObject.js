@@ -1,7 +1,7 @@
 /* global fetch */
-const url = require('url');
-const invariant = require('invariant');
-const warning = require('warning');
+import url from 'url';
+import invariant from 'invariant';
+import warning from 'warning';
 
 const DEFAULT_OPTIONS = { key: 'id', cache: false, credentials: null,
                           headers: {} };
@@ -10,7 +10,7 @@ const ALLOWED_METHODS = ['GET', 'POST', 'PATCH', 'DELETE',
                          'PUT', 'OPTIONS', 'HEAD'];
 
 /** Data Access Object representation */
-class AccessObject {
+export default class AccessObject {
   /**
    * @param {string} endpoint
    * @param {object} options
@@ -209,5 +209,3 @@ class AccessObject {
     });
   }
 }
-
-module.exports = AccessObject;

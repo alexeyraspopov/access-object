@@ -1,6 +1,5 @@
 /** Active Record representation */
-class ActiveRecord {
+export default class ActiveRecord {
+
 
 }
-
-module.exports = ActiveRecord;
