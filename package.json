@@ -2,7 +2,7 @@
   "name": "access-object",
   "version": "0.2.0",
   "description": "Data Access Object",
-  "main": "access-object.js",
+  "main": "src/index.js",
   "dependencies": {
     "invariant": "~2.2.1",
     "warning": "~3.0.0"
@@ -12,15 +12,12 @@
     "babel-jest": "~18.0.0",
     "babel-plugin-transform-async-to-generator": "~6.16.0",
     "babel-plugin-transform-es2015-modules-commonjs": "~6.18.0",
-    "browserify": "~13.0.1",
     "fetch-mock": "~4.5.4",
     "jest-cli": "~18.0.0",
-    "webpack": "~1.13.1",
     "whatwg-fetch": "~1.0.0"
   },
   "scripts": {
-    "test": "jest",
-    "prepublish": "browserify src/AccessObject.js -s AccessObject > access-object.js"
+    "test": "jest"
   },
   "babel": {
     "plugins": [
