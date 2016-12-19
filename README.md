@@ -4,7 +4,13 @@ Data Access Object for your resources.
 
 `AccessObject` works best with RESTful APIs.
 
-## Example
+## Install
+
+```
+npm install access-object
+```
+
+## Usage
 
 ```javascript
 const Users = new AccessObject('/users');
