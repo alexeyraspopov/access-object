@@ -9,7 +9,6 @@ const DEFAULT_OPTIONS = { key: 'id', cache: false, credentials: null,
 const ALLOWED_METHODS = ['GET', 'POST', 'PATCH', 'DELETE',
                          'PUT', 'OPTIONS', 'HEAD'];
 
-/** Data Access Object representation */
 export default class AccessObject {
   /**
    * @param {string} endpoint

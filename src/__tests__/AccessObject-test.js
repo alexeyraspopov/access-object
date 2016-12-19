@@ -24,7 +24,7 @@ describe('AccessObject', () => {
     const [path, request] = ff.calls().matched[0];
 
     const expected = { method: 'POST', body: data, headers: {},
-                       credentials: null};
+                       credentials: null };
 
     assert.equal(path, '/resources/');
     assert.deepEqual(request, expected, 'Request is missing some fields');
