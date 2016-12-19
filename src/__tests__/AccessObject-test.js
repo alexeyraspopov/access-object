@@ -1,6 +1,4 @@
-import co from 'co';
 import ff from 'fetch-mock';
-import assert from 'assert';
 import AccessObject from '../AccessObject';
 
 describe('AccessObject', () => {
@@ -26,9 +24,9 @@ describe('AccessObject', () => {
     const expected = { method: 'POST', body: data, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/');
-    assert.deepEqual(request, expected, 'Request is missing some fields');
-    assert.deepEqual(response, body, 'Response should be a created entity');
+    expect(path).toBe('/resources/');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should retrieve full list', async () => {
@@ -43,9 +41,9 @@ describe('AccessObject', () => {
     const expected = { method: 'GET', body: null, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, body);
+    expect(path).toBe('/resources/');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should retrieve one instance', async () => {
@@ -59,9 +57,9 @@ describe('AccessObject', () => {
     const expected = { method: 'GET', body: null, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/48fga412bca');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, body);
+    expect(path).toBe('/resources/48fga412bca');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should retrieve with query', async () => {
@@ -75,9 +73,9 @@ describe('AccessObject', () => {
     const expected = { method: 'GET', body: null, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/?age=23&name=Jon');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, body);
+    expect(path).toBe('/resources/?age=23&name=Jon');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should retrieve one item with query', async () => {
@@ -92,9 +90,9 @@ describe('AccessObject', () => {
     const expected = { method: 'GET', body: null, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/48fga412bca?age=23&name=Jon');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, body);
+    expect(path).toBe('/resources/48fga412bca?age=23&name=Jon');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should update instance', async () => {
@@ -107,9 +105,9 @@ describe('AccessObject', () => {
 
     const expected = { method: 'PATCH', body, headers: {}, credentials: null };
 
-    assert.equal(path, '/resources/48fga412bca');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, body);
+    expect(path).toBe('/resources/48fga412bca');
+    expect(request).toMatchObject(expected);
+    expect(response).toMatchObject(body);
   });
 
   it('should destroy instance', async () => {
@@ -121,8 +119,8 @@ describe('AccessObject', () => {
     const expected = { method: 'DELETE', body: null, headers: {},
                        credentials: null };
 
-    assert.equal(path, '/resources/48fga412bca');
-    assert.deepEqual(request, expected);
-    assert.deepEqual(response, null);
+    expect(path).toBe('/resources/48fga412bca');
+    expect(request).toMatchObject(expected);
+    expect(response).toBe(null);
   });
 });
