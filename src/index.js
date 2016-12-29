@@ -1,2 +1,4 @@
-export AccessObject from './AccessObject';
-export ActiveRecord from './ActiveRecord';
+import AccessObject from './AccessObject';
+import ActiveRecord from './ActiveRecord';
+
+export { AccessObject, ActiveRecord };
