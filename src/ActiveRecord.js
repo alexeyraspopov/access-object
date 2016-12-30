@@ -1,6 +1,11 @@
-/** Active Record representation */
 export default class ActiveRecord {
+  /**
+   * @param {string} endpoint
+   * @param {object} options
+   */
+  constructor(endpoint, options = {}) {
 
+  }
 
   /**
    * @param {string} key — property name to fetch
