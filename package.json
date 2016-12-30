@@ -2,7 +2,8 @@
   "name": "access-object",
   "version": "0.2.0",
   "description": "Data Access Object",
-  "main": "src/index.js",
+  "main": "src/access-object.js",
+  "jsnext:main": "src/index.js",
   "dependencies": {
     "invariant": "2",
     "warning": "3"
