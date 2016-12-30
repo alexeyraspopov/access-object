@@ -14,10 +14,12 @@
     "babel-plugin-transform-es2015-modules-commonjs": "~6.18.0",
     "fetch-mock": "~4.5.4",
     "jest-cli": "~18.0.0",
+    "rollup": "~0.39.2",
     "whatwg-fetch": "~1.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "rollup --format cjs --external invariant,warning,url src/index.js > src/access-object.js"
   },
   "babel": {
     "plugins": [
